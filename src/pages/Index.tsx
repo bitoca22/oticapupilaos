@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Glasses, UserPlus, ShoppingCart, Wrench, Package } from "lucide-react";
+import { Glasses, UserPlus, ShoppingCart, Wrench, Package, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -32,7 +32,7 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl w-full animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full animate-fade-in">
           {/* Sales Button */}
           <button
             onClick={() => setIsSalesDialogOpen(true)}
@@ -70,6 +70,27 @@ const Index = () => {
                 </h2>
                 <p className="text-muted-foreground text-sm">
                   Registrar novo cliente
+                </p>
+              </div>
+            </div>
+          </button>
+
+          {/* Clients List Button */}
+          <button
+            onClick={() => navigate("/clients")}
+            className="group relative overflow-hidden bg-card rounded-xl p-8 shadow-card hover:shadow-soft transition-all duration-300 border border-border hover:border-primary/30"
+          >
+            <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+            <div className="relative flex flex-col items-center gap-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                <Users className="h-10 w-10 text-primary" />
+              </div>
+              <div className="text-center">
+                <h2 className="text-xl font-semibold text-foreground mb-1">
+                  Lista de Clientes
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Buscar e gerenciar clientes
                 </p>
               </div>
             </div>
